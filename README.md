@@ -1,6 +1,6 @@
 # GWTJsqlParser
 
-GWT wrapper to enable using the (JSqlParser)[https://github.com/JSQLParser/JSqlParser] in GWT browser applications. Provides necessary super sources to support parsing of Strings, but not InputStreams.
+GWT wrapper to enable using the [JSqlParser](https://github.com/JSQLParser/JSqlParser) in GWT browser applications. Provides necessary super sources to support parsing of Strings, but not InputStreams.
 
 ## Disclaimer
 
@@ -8,7 +8,7 @@ JSqlParser uses javacc to generate java sources from a jjt file, these are not i
 
 So you have to generate these sources yourself using the maven target on their project and add those sources to your project's classpath.
 
-Or you can download a (zip file with all necessary jars for the 0.9.5-SNAPSHOT release here)[https://github.com/paxdei/GWTJsqlParser/releases/download/0.9.5-SNAPSHOT/gwt-jsqlparser-0.9.5-SNAPSHOT.zip]
+Or you can download a [zip file with all necessary jars for the 0.9.5-SNAPSHOT release here](https://github.com/paxdei/GWTJsqlParser/releases/download/0.9.5-SNAPSHOT/gwt-jsqlparser-0.9.5-SNAPSHOT.zip)
 
 
 ## Usage
