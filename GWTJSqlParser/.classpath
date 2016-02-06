@@ -3,7 +3,5 @@
 	<classpathentry excluding="**/super/**|net/sf/jsqlparser/super/|net/sf/jsqlparser/super/" kind="src" path="src"/>
 	<classpathentry kind="con" path="com.google.gwt.eclipse.core.GWT_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="var" path="CORP_LIB/java/repository/jsqlparser/jsqlparser-0.9.5-SNAPSHOT.jar" sourcepath="/CORP_LIB/java/repository/jsqlparser/jsqlparser-0.9.5-SNAPSHOT-sources.jar"/>
-	<classpathentry kind="var" path="CORP_LIB/java/repository/jsqlparser/jsqlparser-0.9.5-SNAPSHOT-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
