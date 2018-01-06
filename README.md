@@ -28,3 +28,10 @@ Now you are free to use the parser in your client code
 ## Limitations
 
 You can only use Strings as input to the parser, trying to use InputStream will fail on the client side. This is due to the fact that the GWT JRE emulation does not include these classes.
+
+## Known issues
+
+Compilation errors in `<super-source>` in IDE.
+These may occur for example in `super/java.util.regex.Pattern#matcher`.
+Due to the fact that jdk class takes precedence by being on the classpath before the module sources.
+To change the order in Intellij IDEA go to `File/Project Structure.../Modules/Dependencies`
