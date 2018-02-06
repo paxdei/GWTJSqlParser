@@ -33,3 +33,5 @@ Compilation errors in `<super-source>` in IDE.
 These may occur for example in `super/java.util.regex.Pattern#matcher`.
 Due to the fact that jdk class takes precedence by being on the classpath before the module sources.
 To change the order in Intellij IDEA go to `File/Project Structure.../Modules/Dependencies`
+
+There are jars in git history. To avoid downloading them do a shallow clone.
