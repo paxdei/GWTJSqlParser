@@ -12,6 +12,9 @@ gwt {
 
 repositories {
     mavenCentral()
+    flatDir {
+        dirs 'C:\\Data\\IdeaProjects\\JSqlParser\\target'
+    }
 }
 
 buildscript {
@@ -37,8 +40,8 @@ configurations {
 }
 
 dependencies {
-    compile 'com.github.jsqlparser:jsqlparser:1.1'
-    compile 'com.github.jsqlparser:jsqlparser:1.1:sources'
+    compile 'com.github.jsqlparser:jsqlparser:1.2-SNAPSHOT'
+    compile 'com.github.jsqlparser:jsqlparser:1.2-SNAPSHOT:sources'
 }
 
 jar {
