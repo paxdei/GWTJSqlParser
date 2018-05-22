@@ -35,8 +35,8 @@ import java.io.StringReader;
 public final class CCJSqlParserUtil {
 
 	public static Statement parse(String sql) throws JSQLParserException {
-		CCJSqlParser parser = new CCJSqlParser(new StringReader(sql));
 		try {
+			CCJSqlParser parser = new CCJSqlParser(sql);
 			return parser.Statement();
 		} catch (Exception ex) {
 			throw new JSQLParserException(ex);
@@ -44,9 +44,9 @@ public final class CCJSqlParserUtil {
 	}
     
     public static Node parseAST(String sql) throws JSQLParserException {
-		CCJSqlParser parser = new CCJSqlParser(new StringReader(sql));
 		try {
-            parser.Statement();
+			CCJSqlParser parser = new CCJSqlParser(sql);
+			parser.Statement();
 			return parser.jjtree.rootNode();
 		} catch (Exception ex) {
 			throw new JSQLParserException(ex);
@@ -61,8 +61,8 @@ public final class CCJSqlParserUtil {
 	 * @throws JSQLParserException 
 	 */
 	public static Expression parseExpression(String expression) throws JSQLParserException {
-		CCJSqlParser parser = new CCJSqlParser(new StringReader(expression));
 		try {
+			CCJSqlParser parser = new CCJSqlParser(expression);
 			return parser.SimpleExpression();
 		} catch (Exception ex) {
 			throw new JSQLParserException(ex);
@@ -76,8 +76,8 @@ public final class CCJSqlParserUtil {
 	 * @throws JSQLParserException 
 	 */
 	public static Expression parseCondExpression(String condExpr) throws JSQLParserException {
-		CCJSqlParser parser = new CCJSqlParser(new StringReader(condExpr));
 		try {
+			CCJSqlParser parser = new CCJSqlParser(condExpr);
 			return parser.Expression();
 		} catch (Exception ex) {
 			throw new JSQLParserException(ex);
@@ -88,8 +88,8 @@ public final class CCJSqlParserUtil {
      * Parse a statement list.
      */
     public static Statements parseStatements(String sqls) throws JSQLParserException {
-		CCJSqlParser parser = new CCJSqlParser(new StringReader(sqls));
 		try {
+			CCJSqlParser parser = new CCJSqlParser(sqls);
 			return parser.Statements();
 		} catch (Exception ex) {
 			throw new JSQLParserException(ex);

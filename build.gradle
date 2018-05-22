@@ -1,0 +1,65 @@
+group 'com.github.paxdei'
+version '1.1.0'
+
+apply plugin: 'java'
+apply plugin: 'gwt-base'
+
+sourceCompatibility = 1.8
+
+gwt {
+    gwtVersion = '2.8.0'
+}
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'C:\\Data\\IdeaProjects\\JSqlParser\\target'
+    }
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'de.richsource.gradle.plugins:gwt-gradle-plugin:0.6'
+    }
+}
+
+sourceSets {
+    superSource { // super is a reserved word in groovy
+        java {
+            srcDir 'src/super'
+        }
+        compileClasspath = sourceSets.main.compileClasspath
+    }
+}
+
+configurations {
+    superSourceCompile.extendsFrom mainCompile
+}
+
+dependencies {
+    compile 'com.github.jsqlparser:jsqlparser:1.2-SNAPSHOT'
+    compile 'com.github.jsqlparser:jsqlparser:1.2-SNAPSHOT:sources'
+}
+
+jar {
+    // copy .class and .java files of the wrapped library
+    // source files are necessary for the gwt compilation to pass
+    configurations.compile.resolvedConfiguration.resolvedArtifacts.findAll {
+        it.name == 'jsqlparser' // both regular and sources jars have the same 'name'
+    }.each {
+        from(zipTree(it.file)) {
+            exclude 'META-INF/**'
+        }
+    }
+
+    // copy super .class and .java files with offset from the module descriptor
+    from(sourceSets.superSource.output) {
+        into 'net/sf/jsqlparser/super'
+    }
+    from(sourceSets.superSource.allSource) {
+        into 'net/sf/jsqlparser/super'
+    }
+}
